@@ -126,7 +126,8 @@ position = Vector2( 72.06, 436.436 )
 collision_layer = 2
 
 [node name="ghost" parent="." instance=ExtResource( 3 )]
-position = Vector2( 60.06, 389.436 )
+modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( -84.94, 414.436 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 4 )
