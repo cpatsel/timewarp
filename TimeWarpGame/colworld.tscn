@@ -235,6 +235,7 @@ position = Vector2( 241.169, 304.126 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="circle"]
+position = Vector2( -48.0002, 64.0003 )
 shape = SubResource( 9 )
 
 [node name="anim" type="AnimationPlayer" parent="circle"]

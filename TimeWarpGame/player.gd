@@ -77,12 +77,14 @@ func _physics_process(delta):
             
             force.x -= WALK_FORCE
             stop = false
+          
+        get_node( "Sprite" ).set_flip_h( true )
     elif walk_right:
         if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
-            
+          
             force.x += WALK_FORCE
             stop = false
-    
+        get_node( "Sprite" ).set_flip_h( false )
     if stop:
         var vsign = sign(velocity.x)
         var vlen = abs(velocity.x)
@@ -92,7 +94,9 @@ func _physics_process(delta):
             vlen = 0
         
         velocity.x = vlen * vsign
-    
+        #TODO: this should probably change back to
+        #idle sprite instead of just stopping animation.
+       
     # Integrate forces to velocity
     velocity += force * delta	
     # Integrate velocity into motion and move
@@ -110,6 +114,11 @@ func _physics_process(delta):
         # Makes controls more snappy.
         velocity.y = -JUMP_SPEED
         jumping = true
-    
+    #animation controls
+    if (velocity.length() > 0):
+         if not get_node('AnimationPlayer').is_playing():
+             get_node('AnimationPlayer').play()
+    else:
+         get_node('AnimationPlayer').stop()
     on_air_time += delta
     prev_jump_pressed = jump
