@@ -8,11 +8,21 @@ var recordsize = 100
 var counter = 0
 var f = Vector2(0,0)
 
+var used = false
+
 
 
 func _ready():
     time_start = OS.get_ticks_msec()
     set_process(true)
+	
+func _reset():
+	if (used):
+		var f = Vector2(72.1,440.8)
+		position = f
+		counter = 0
+	else:
+		used = true
 
 func _process(delta):
     time_now = OS.get_ticks_msec()

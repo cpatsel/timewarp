@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TimeWarp"
-run/main_scene="res://mainMenu.tscn"
+run/main_scene="res://colworld.tscn"
 config/icon="res://icon.png"
 
 [display]

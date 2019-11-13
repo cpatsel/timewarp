@@ -126,6 +126,15 @@ position = Vector2( 72.06, 436.436 )
 scale = Vector2( 0.25, 0.25 )
 collision_layer = 2
 
+[node name="Camera2D2" type="Camera2D" parent="player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 500
+limit_bottom = 500
+limit_smoothed = true
+
 [node name="ghost" parent="." instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( -84.94, 414.436 )
@@ -235,7 +244,6 @@ position = Vector2( 241.169, 304.126 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="circle"]
-position = Vector2( -48.0002, 64.0003 )
 shape = SubResource( 9 )
 
 [node name="anim" type="AnimationPlayer" parent="circle"]

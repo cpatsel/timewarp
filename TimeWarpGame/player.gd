@@ -8,8 +8,8 @@ const GRAVITY = 500.0 # pixels/second/second
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
 const WALK_FORCE = 600
-const WALK_MIN_SPEED = 10
-const WALK_MAX_SPEED = 200
+const WALK_MIN_SPEED = 20
+const WALK_MAX_SPEED = 80
 const STOP_FORCE = 1300
 const JUMP_SPEED = 200
 const JUMP_MAX_AIRBORNE_TIME = 0.2
@@ -59,7 +59,7 @@ func _physics_process(delta):
     var jump = Input.is_action_pressed("jump")
     
     if Input.is_key_pressed(KEY_R):
-        self._reset()
+        get_tree().call_group('reset', '_reset')
         
 
 
