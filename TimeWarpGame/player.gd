@@ -115,10 +115,12 @@ func _physics_process(delta):
         velocity.y = -JUMP_SPEED
         jumping = true
     #animation controls
-    if (velocity.length() > 0):
-         if not get_node('AnimationPlayer').is_playing():
-             get_node('AnimationPlayer').play()
+    if (jumping):
+            $AnimationPlayer.play("Jump")
+    elif (velocity.length() > 0):
+         if $AnimationPlayer.current_animation != "Walk":
+             get_node('AnimationPlayer').play("Walk")
     else:
-         get_node('AnimationPlayer').stop()
+         get_node('AnimationPlayer').play("Idle")
     on_air_time += delta
     prev_jump_pressed = jump
