@@ -70,6 +70,8 @@ func _physics_process(delta):
     if Input.is_key_pressed(KEY_R):
         get_tree().call_group('reset', '_reset')
         get_tree().call_group('reset', '_reset', reset_to)
+        if Input.is_key_pressed(KEY_SHIFT):
+            get_tree().call_group('player', '_anchor')
         
 
 
