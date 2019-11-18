@@ -13,6 +13,11 @@ func _ready():
 	origin_pos = get_position()
 	origin_vis = visible
 	origin_col = get_node("CollisionShape2D").disabled
+
+func _anchor():
+	origin_pos = get_position()
+	origin_vis = visible
+	origin_col = get_node("CollisionShape2D").disabled
 	
 func _reset():
 	set_position(origin_pos)

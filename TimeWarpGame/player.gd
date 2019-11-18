@@ -33,10 +33,12 @@ var Ghost = {
     }
 
 var loopcount = 0
+var reset_to
 
 func _ready():
-    time_start = OS.get_ticks_msec()
-    set_process(true)
+	time_start = OS.get_ticks_msec()
+	set_process(true)
+	reset_to = get_position()
 
 func _process(delta):
     time_now = OS.get_ticks_msec()
@@ -44,10 +46,17 @@ func _process(delta):
     #print("elapsed : ", elapsed)
     #print(self.get_path())
 
+func _anchor():
+	loopcount = 0
+	reset_to = get_position()
+	Ghost = {
+    pos = [],
+    time = []
+    }
+
 func _reset():
     loopcount = 1
-    var f = Vector2(72.1,440.8)
-    position = f
+    position = reset_to
     
     
 func _physics_process(delta):
@@ -60,6 +69,7 @@ func _physics_process(delta):
     
     if Input.is_key_pressed(KEY_R):
         get_tree().call_group('reset', '_reset')
+        get_tree().call_group('reset', '_reset', reset_to)
         
 
 

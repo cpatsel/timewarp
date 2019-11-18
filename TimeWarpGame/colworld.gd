@@ -1,27 +1,38 @@
 extends Node2D
 
-
-func _on_princess_body_enter(body):
-    # The name of this editor-generated callback is unfortunate
-    if body.is_in_group("player"):
-        $youwin.show()
 		
-func _on_button1_body_entered(body):
+func _button_ladder_on(body, number):
 	if body.is_in_group("player"):
-		$youwin2.show()
-		get_tree().call_group("ladder1", "set_deferred", "disabled", false)
-		get_tree().call_group("ladder1", "show")
+		get_tree().call_group("ladder" + number, "set_deferred", "disabled", false)
+		get_tree().call_group("ladder" + number, "show")
 
 
-func _on_button2_body_entered(body):
+func _button_ladder_off(body, number):
 	if body.is_in_group("player"):
-		get_tree().call_group("door1", "set_deferred", "disabled", true)
-		get_tree().call_group("door1", "hide")
-		$youwin2.hide()
+		get_tree().call_group("ladder" + number, "set_deferred", "disabled", true)
+		get_tree().call_group("ladder" + number, "hide")
 
 
-func _on_button3_body_entered(body):
+func _button_door_on(body, number):
 	if body.is_in_group("player"):
-		get_tree().call_group("door2", "set_deferred", "disabled", true)
-		get_tree().call_group("door2", "hide")
-		$youwin.hide()
+		get_tree().call_group("door" + number, "set_deferred", "disabled", false)
+		get_tree().call_group("door" + number, "show")
+
+
+func _button_door_off(body, number):
+	if body.is_in_group("player"):
+		get_tree().call_group("door" + number, "set_deferred", "disabled", true)
+		get_tree().call_group("door" + number, "hide")
+
+
+func _checkpoint_hit(body, number, left, top, right, bottom):
+	if body.is_in_group("player"):
+		get_tree().call_group("checkpoint" + number, "set_deferred", "disabled", true)
+		get_tree().call_group("checkpoint" + number, "hide")
+		get_tree().call_group("reset", "_anchor")
+		get_node("player/Camera2D2").limit_left = left
+		get_node("player/Camera2D2").limit_top = top
+		get_node("player/Camera2D2").limit_right = right
+		get_node("player/Camera2D2").limit_bottom = bottom
+
+
