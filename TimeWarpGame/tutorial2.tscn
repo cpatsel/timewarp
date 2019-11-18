@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://obstacle.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://youwin.gd" type="Script" id=8]
 [ext_resource path="res://youwin2.gd" type="Script" id=9]
 [ext_resource path="res://oneway.gd" type="Script" id=10]
+[ext_resource path="res://Sounds/scifi2.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -626,7 +627,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 379.549, 88.6024 )
 rotation = -1.58861
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway15"]
@@ -665,7 +665,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 695.63, 101.963 )
 rotation = 0.00199246
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway17"]
@@ -726,7 +725,6 @@ editor/display_folded = true
 visible = false
 position = Vector2( 616.009, 102.341 )
 rotation = 0.00199246
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway20"]
@@ -747,7 +745,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 888.16, 248.686 )
 rotation = -1.58861
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway21"]
@@ -767,7 +764,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 887.591, 232.759 )
 rotation = -1.58861
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway22"]
@@ -787,7 +783,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 825.152, 248.686 )
 rotation = 1.55235
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway23"]
@@ -807,7 +802,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 824.583, 232.759 )
 rotation = 1.55235
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway24"]
@@ -827,7 +821,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1002.92, 488.605 )
 rotation = 1.55235
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway25"]
@@ -848,7 +841,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1002.35, 472.678 )
 rotation = 1.55235
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway26"]
@@ -869,7 +861,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1064.24, 409.362 )
 rotation = -1.58861
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway27"]
@@ -890,7 +881,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1063.67, 393.435 )
 rotation = -1.58861
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway28"]
@@ -911,7 +901,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 1097.95, 393.435 )
 rotation = -1.56021
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway29"]
@@ -931,7 +920,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 1098.52, 409.362 )
 rotation = -1.56021
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway30"]
@@ -975,7 +963,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 1336.36, 294.742 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway33"]
@@ -995,7 +982,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 1336.36, 312.11 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway34"]
@@ -1015,7 +1001,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1335.87, 391.301 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway35"]
@@ -1036,7 +1021,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1335.87, 408.67 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway36"]
@@ -1057,7 +1041,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 1415.46, 294.868 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway37"]
@@ -1077,7 +1060,6 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 1415.46, 312.237 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway38"]
@@ -1097,7 +1079,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1399.61, 391.094 )
 rotation = -4.71105
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway39"]
@@ -1118,7 +1099,6 @@ one_way_collision = true
 visible = false
 position = Vector2( 1399.61, 408.462 )
 rotation = -4.71105
-scale = Vector2( 1, 1 )
 script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway40"]
@@ -1131,24 +1111,28 @@ texture = ExtResource( 2 )
 shape = SubResource( 7 )
 disabled = true
 one_way_collision = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 [connection signal="body_entered" from="button1" to="." method="_button_ladder_on" binds= [ "1" ]]
 [connection signal="body_entered" from="button2" to="." method="_button_door_off" binds= [ "1" ]]
 [connection signal="body_entered" from="button3" to="." method="_button_door_off" binds= [ "2" ]]
-[connection signal="body_entered" from="button4" to="." method="_button_door_off" binds= [ "4" ]]
 [connection signal="body_entered" from="button4" to="." method="_button_door_on" binds= [ "3" ]]
-[connection signal="body_entered" from="button5" to="." method="_button_door_off" binds= [ "3" ]]
+[connection signal="body_entered" from="button4" to="." method="_button_door_off" binds= [ "4" ]]
 [connection signal="body_entered" from="button5" to="." method="_button_door_on" binds= [ "4" ]]
+[connection signal="body_entered" from="button5" to="." method="_button_door_off" binds= [ "3" ]]
 [connection signal="body_entered" from="button6" to="." method="_button_door_off" binds= [ "5" ]]
 [connection signal="body_entered" from="button7" to="." method="_button_door_off" binds= [ "6" ]]
 [connection signal="body_entered" from="button8" to="." method="_button_door_on" binds= [ "7" ]]
-[connection signal="body_entered" from="button9" to="." method="_button_door_off" binds= [ "9" ]]
 [connection signal="body_entered" from="button9" to="." method="_button_door_on" binds= [ "8" ]]
-[connection signal="body_entered" from="button10" to="." method="_button_door_off" binds= [ "11" ]]
+[connection signal="body_entered" from="button9" to="." method="_button_door_off" binds= [ "9" ]]
 [connection signal="body_entered" from="button10" to="." method="_button_door_on" binds= [ "10" ]]
-[connection signal="body_entered" from="button11" to="." method="_button_door_off" binds= [ "10" ]]
+[connection signal="body_entered" from="button10" to="." method="_button_door_off" binds= [ "11" ]]
 [connection signal="body_entered" from="button11" to="." method="_button_door_on" binds= [ "11" ]]
-[connection signal="body_entered" from="button12" to="." method="_button_door_off" binds= [ "12" ]]
+[connection signal="body_entered" from="button11" to="." method="_button_door_off" binds= [ "10" ]]
 [connection signal="body_entered" from="button12" to="." method="_button_door_on" binds= [ "13" ]]
+[connection signal="body_entered" from="button12" to="." method="_button_door_off" binds= [ "12" ]]
 [connection signal="body_entered" from="checkpoint1" to="." method="_checkpoint_hit" binds= [ "1", 460, 0, 820, 240 ]]
 [connection signal="body_entered" from="checkpoint2" to="." method="_checkpoint_hit" binds= [ "2", 770, 0, 965, 450 ]]
 [connection signal="body_entered" from="checkpoint3" to="." method="_checkpoint_hit" binds= [ "3", 880, 300, 1140, 530 ]]
