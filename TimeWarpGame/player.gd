@@ -36,9 +36,9 @@ var loopcount = 0
 var reset_to
 
 func _ready():
-	time_start = OS.get_ticks_msec()
-	set_process(true)
-	reset_to = get_position()
+    time_start = OS.get_ticks_msec()
+    set_process(true)
+    reset_to = get_position()
 
 func _process(delta):
     time_now = OS.get_ticks_msec()
@@ -47,9 +47,9 @@ func _process(delta):
     #print(self.get_path())
 
 func _anchor():
-	loopcount = 0
-	reset_to = get_position()
-	Ghost = {
+    loopcount = 0
+    reset_to = get_position()
+    Ghost = {
     pos = [],
     time = []
     }

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/scifi1.wav-b95ba32a97c0f408cd42a60fcf5a21a8.sample"
+
+[deps]
+
+source_file="res://sound/scifi1.wav"
+dest_files=[ "res://.import/scifi1.wav-b95ba32a97c0f408cd42a60fcf5a21a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

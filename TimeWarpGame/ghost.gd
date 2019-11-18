@@ -13,21 +13,21 @@ var used = false
 
 
 func _ready():
-	time_start = OS.get_ticks_msec()
-	set_process(true)
+    time_start = OS.get_ticks_msec()
+    set_process(true)
 
 
 func _anchor():
-	used = false
-	hide()
-	
+    used = false
+    hide()
+    
 func _reset(player_origin):
-	if (used):
-		position = player_origin
-		counter = 0
-		show()
-	else:
-		used = true
+    if (used):
+        position = player_origin
+        counter = 0
+        show()
+    else:
+        used = true
 
 func _process(delta):
     time_now = OS.get_ticks_msec()
