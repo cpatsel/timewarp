@@ -19,3 +19,11 @@ func _reset():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+
+
+
+func _on_exit_body_entered(body):
+	get_tree().change_scene('res://Select.tscn')
+	pass # Replace with function body.

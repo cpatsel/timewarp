@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://obstacle.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://youwin2.gd" type="Script" id=9]
 [ext_resource path="res://oneway.gd" type="Script" id=10]
 [ext_resource path="res://Sounds/scifi2.wav" type="AudioStream" id=11]
+[ext_resource path="res://machine.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -250,6 +251,17 @@ position = Vector2( 1424.41, 414.453 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="button12"]
+texture = ExtResource( 6 )
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2( 1424.41, 414.453 )
+
+[node name="collision" type="CollisionShape2D" parent="exit"]
+position = Vector2( 145, -69 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="exit"]
+position = Vector2( 99, 16 )
 texture = ExtResource( 6 )
 
 [node name="checkpoint1" type="Area2D" parent="." groups=[
@@ -1115,6 +1127,13 @@ one_way_collision = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+light_mask = 3
+position = Vector2( 1570.5, 338 )
+scale = Vector2( 0.0907739, 0.128906 )
+texture = ExtResource( 12 )
 [connection signal="body_entered" from="button1" to="." method="_button_ladder_on" binds= [ "1" ]]
 [connection signal="body_entered" from="button2" to="." method="_button_door_off" binds= [ "1" ]]
 [connection signal="body_entered" from="button3" to="." method="_button_door_off" binds= [ "2" ]]
@@ -1133,6 +1152,7 @@ autoplay = true
 [connection signal="body_entered" from="button11" to="." method="_button_door_off" binds= [ "10" ]]
 [connection signal="body_entered" from="button12" to="." method="_button_door_on" binds= [ "13" ]]
 [connection signal="body_entered" from="button12" to="." method="_button_door_off" binds= [ "12" ]]
+[connection signal="body_entered" from="exit" to="youwin" method="_on_exit_body_entered"]
 [connection signal="body_entered" from="checkpoint1" to="." method="_checkpoint_hit" binds= [ "1", 460, 0, 820, 240 ]]
 [connection signal="body_entered" from="checkpoint2" to="." method="_checkpoint_hit" binds= [ "2", 770, 0, 965, 450 ]]
 [connection signal="body_entered" from="checkpoint3" to="." method="_checkpoint_hit" binds= [ "3", 880, 300, 1140, 530 ]]
