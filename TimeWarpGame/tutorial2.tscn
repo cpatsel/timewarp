@@ -106,91 +106,11 @@ limit_smoothed = true
 editor_draw_limits = true
 
 [node name="ghost" parent="." groups=[
-"ghost",
 "player",
+"ghost",
 ] instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost2" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost3" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost4" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost5" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost6" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost7" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost8" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
-[node name="ghost9" parent="." groups=[
-"ghost",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -81.94, 414.436 )
 scale = Vector2( 0.25, 0.25 )
 collision_layer = 2
 script = ExtResource( 4 )
