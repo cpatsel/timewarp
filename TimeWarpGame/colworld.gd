@@ -30,6 +30,7 @@ func _checkpoint_hit(body, number, left, top, right, bottom):
 		get_tree().call_group("checkpoint" + number, "set_deferred", "disabled", true)
 		get_tree().call_group("checkpoint" + number, "hide")
 		get_tree().call_group("reset", "_anchor")
+		get_tree().call_group("ghost", "_anchor")
 		get_node("player/Camera2D2").limit_left = left
 		get_node("player/Camera2D2").limit_top = top
 		get_node("player/Camera2D2").limit_right = right

@@ -34,11 +34,13 @@ var Ghost = {
 
 var loopcount = 0
 var reset_to
+var ghosts
 
 func _ready():
 	time_start = OS.get_ticks_msec()
 	set_process(true)
 	reset_to = get_position()
+	ghosts = get_tree().get_nodes_in_group('ghost')
 
 func _process(delta):
     time_now = OS.get_ticks_msec()
@@ -55,9 +57,21 @@ func _anchor():
     }
 
 func _reset():
-    loopcount = 1
-    position = reset_to
-    
+	for i in range(loopcount + 1):
+		if (i < len(ghosts)):
+			ghosts[i]._reset(reset_to, Ghost, loopcount + 1)
+	loopcount = loopcount + 1
+	Ghost = {
+    pos = [],
+    time = []
+    }
+	position = reset_to
+
+func _input(event):
+    if Input.is_key_pressed(KEY_R):
+        get_tree().call_group('reset', '_reset')
+        if Input.is_key_pressed(KEY_SHIFT):
+            get_tree().call_group('player', '_anchor')  
     
 func _physics_process(delta):
     # Create forces
@@ -66,18 +80,12 @@ func _physics_process(delta):
     var walk_left = Input.is_action_pressed("move_left")
     var walk_right = Input.is_action_pressed("move_right")
     var jump = Input.is_action_pressed("jump")
-    
-    if Input.is_key_pressed(KEY_R):
-        get_tree().call_group('reset', '_reset')
-        get_tree().call_group('reset', '_reset', reset_to)
-        if Input.is_key_pressed(KEY_SHIFT):
-            get_tree().call_group('player', '_anchor')
         
 
 
     
     if (elapsed % 1000 == 0):
-        if (loopcount == 0):
+        if (loopcount > -1):
             Ghost.pos.append(get_position())
             Ghost.time = elapsed
         
