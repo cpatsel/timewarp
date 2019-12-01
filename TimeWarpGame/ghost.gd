@@ -15,23 +15,23 @@ var used = false
 var loop = -1
 
 func _ready():
-	time_start = OS.get_ticks_msec()
-	set_process(true)
+    time_start = OS.get_ticks_msec()
+    set_process(true)
 
 
 func _anchor():
-	used = false
-	loop = -1
-	hide()
-	
+    used = false
+    loop = -1
+    hide()
+    
 func _reset(player_origin, player_ghost, player_loop):
-	if (!used):
-		used = true
-		Ghost = player_ghost
-		loop = player_loop
-		show()
-	position = player_origin
-	counter = 0
+    if (!used):
+        used = true
+        Ghost = player_ghost
+        loop = player_loop
+        show()
+    position = player_origin
+    counter = 0
 
 func _process(delta):
     time_now = OS.get_ticks_msec()

@@ -37,10 +37,10 @@ var reset_to
 var ghosts
 
 func _ready():
-	time_start = OS.get_ticks_msec()
-	set_process(true)
-	reset_to = get_position()
-	ghosts = get_tree().get_nodes_in_group('ghost')
+    time_start = OS.get_ticks_msec()
+    set_process(true)
+    reset_to = get_position()
+    ghosts = get_tree().get_nodes_in_group('ghost')
 
 func _process(delta):
     time_now = OS.get_ticks_msec()
@@ -49,23 +49,23 @@ func _process(delta):
     #print(self.get_path())
 
 func _anchor():
-	loopcount = 0
-	reset_to = get_position()
-	Ghost = {
+    loopcount = 0
+    reset_to = get_position()
+    Ghost = {
     pos = [],
     time = []
     }
 
 func _reset():
-	for i in range(loopcount + 1):
-		if (i < len(ghosts)):
-			ghosts[i]._reset(reset_to, Ghost, loopcount + 1)
-	loopcount = loopcount + 1
-	Ghost = {
+    for i in range(loopcount + 1):
+        if (i < len(ghosts)):
+            ghosts[i]._reset(reset_to, Ghost, loopcount + 1)
+    loopcount = loopcount + 1
+    Ghost = {
     pos = [],
     time = []
     }
-	position = reset_to
+    position = reset_to
 
 func _input(event):
     if Input.is_key_pressed(KEY_R):
