@@ -1,18 +1,17 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://img/tiles/lab.png" type="Texture" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ghost.gd" type="Script" id=4]
-[ext_resource path="res://moving_platform2.gd" type="Script" id=5]
-[ext_resource path="res://obstacle.png" type="Texture" id=6]
-[ext_resource path="res://princess.png" type="Texture" id=7]
-[ext_resource path="res://exit.gd" type="Script" id=8]
-[ext_resource path="res://youwin.gd" type="Script" id=9]
-[ext_resource path="res://youwin2.gd" type="Script" id=10]
-[ext_resource path="res://oneway.gd" type="Script" id=11]
-[ext_resource path="res://machine.png" type="Texture" id=12]
-[ext_resource path="res://Sounds/scifi2.wav" type="AudioStream" id=13]
+[ext_resource path="res://moving_platform2.gd" type="Script" id=4]
+[ext_resource path="res://obstacle.png" type="Texture" id=5]
+[ext_resource path="res://princess.png" type="Texture" id=6]
+[ext_resource path="res://exit.gd" type="Script" id=7]
+[ext_resource path="res://youwin.gd" type="Script" id=8]
+[ext_resource path="res://youwin2.gd" type="Script" id=9]
+[ext_resource path="res://oneway.gd" type="Script" id=10]
+[ext_resource path="res://machine.png" type="Texture" id=11]
+[ext_resource path="res://Sounds/scifi2.wav" type="AudioStream" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -141,27 +140,17 @@ limit_right = 560
 limit_bottom = 496
 editor_draw_limits = true
 
-[node name="ghost" parent="." groups=[
-"reset",
-"player",
-] instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( -84.94, 414.436 )
-scale = Vector2( 0.25, 0.25 )
-collision_layer = 2
-script = ExtResource( 4 )
-
 [node name="moving_platform2" type="KinematicBody2D" parent="." groups=[
 "reset",
 ]]
 position = Vector2( 88.3493, 296 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="collision" type="CollisionShape2D" parent="moving_platform2"]
 shape = SubResource( 5 )
 
 [node name="sprite" type="Sprite" parent="moving_platform2"]
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="anim" type="AnimationPlayer" parent="moving_platform2"]
 autoplay = "updown"
@@ -176,12 +165,12 @@ position = Vector2( 374.4, 206.9 )
 shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="button2"]
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="exit" type="Area2D" parent="."]
 position = Vector2( 505.4, 317.9 )
 collision_layer = 3
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="collision" type="CollisionShape2D" parent="exit"]
 position = Vector2( -1, -2 )
@@ -189,7 +178,7 @@ shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="exit"]
 position = Vector2( 338, 60 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="button3" type="Area2D" parent="."]
 position = Vector2( 346.85, 124.25 )
@@ -198,7 +187,7 @@ position = Vector2( 346.85, 124.25 )
 shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="button3"]
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="button1" type="Area2D" parent="."]
 position = Vector2( 449.45, 464.35 )
@@ -207,7 +196,7 @@ position = Vector2( 449.45, 464.35 )
 shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="button1"]
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="youwin" type="Label" parent="." groups=[
 "reset",
@@ -222,7 +211,7 @@ size_flags_vertical = 0
 text = "Oh no
 The lab is exploding"
 align = 1
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="youwin2" type="Label" parent="." groups=[
 "reset",
@@ -237,7 +226,7 @@ size_flags_vertical = 0
 text = "Oh no
 The lab is exploding"
 align = 1
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="oneway1" type="KinematicBody2D" parent="." groups=[
 "reset",
@@ -246,11 +235,11 @@ script = ExtResource( 10 )
 editor/display_folded = true
 visible = false
 position = Vector2( 406.7, 359.3 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway1"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway1" groups=[
 "ladder1",
@@ -266,11 +255,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 406.131, 288.769 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway6"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway6" groups=[
 "ladder1",
@@ -286,11 +275,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 407.838, 218.806 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway10"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway10" groups=[
 "ladder1",
@@ -306,11 +295,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 423.7, 359.3 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway2"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway2" groups=[
 "ladder1",
@@ -326,11 +315,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 423.131, 288.769 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway5"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway5" groups=[
 "ladder1",
@@ -346,11 +335,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 409.3, 395.4 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway3"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway3" groups=[
 "ladder1",
@@ -366,11 +355,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 408.731, 324.869 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway7"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway7" groups=[
 "ladder1",
@@ -386,11 +375,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 424.3, 395.4 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway4"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway4" groups=[
 "ladder1",
@@ -406,11 +395,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 423.731, 324.869 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway8"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway8" groups=[
 "ladder1",
@@ -426,11 +415,11 @@ one_way_collision = true
 editor/display_folded = true
 visible = false
 position = Vector2( 425.438, 254.906 )
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway12"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway12" groups=[
 "ladder1",
@@ -446,11 +435,11 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 377.658, 329.988 )
 rotation = 1.56908
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway13"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway13" groups=[
 "door1",
@@ -465,11 +454,11 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 456.722, 328.281 )
 rotation = 4.70051
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway15"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway15" groups=[
 "door2",
@@ -484,11 +473,11 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 377.089, 314.061 )
 rotation = 1.56908
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway14"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway14" groups=[
 "door1",
@@ -503,11 +492,11 @@ one_way_collision = true
 editor/display_folded = true
 position = Vector2( 456.153, 312.355 )
 rotation = 4.70051
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="sprite" type="Sprite" parent="oneway16"]
 scale = Vector2( 1, 0.3 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway16" groups=[
 "door2",
@@ -519,10 +508,10 @@ one_way_collision = true
 position = Vector2( 504.714, 289.128 )
 scale = Vector2( 0.121567, 0.188065 )
 z_index = -1
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 12 )
 autoplay = true
 [connection signal="body_entered" from="button2" to="." method="_button_door_off" binds= [ "1" ]]
 [connection signal="body_entered" from="exit" to="youwin" method="_on_exit_body_entered"]
