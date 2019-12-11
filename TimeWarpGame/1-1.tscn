@@ -176,8 +176,8 @@ limit_smoothed = true
 editor_draw_limits = true
 
 [node name="ghost" parent="." groups=[
-"ghost",
 "player",
+"ghost",
 ] instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( -84.94, 414.436 )
@@ -186,8 +186,8 @@ collision_layer = 2
 script = ExtResource( 8 )
 
 [node name="ghost2" parent="." groups=[
-"ghost",
 "player",
+"ghost",
 ] instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( -84.94, 414.436 )
@@ -981,7 +981,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door7" groups=[
 "door5",
 ]]
-position = Vector2( 3.05176e-05, -1.52588e-05 )
+position = Vector2( 3.05176e-005, -1.52588e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1001,7 +1001,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door8" groups=[
 "door5",
 ]]
-position = Vector2( 3.05176e-05, -4.57764e-05 )
+position = Vector2( 3.05176e-005, -4.57764e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1021,7 +1021,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door9" groups=[
 "door5",
 ]]
-position = Vector2( 3.05176e-05, -1.52588e-05 )
+position = Vector2( 3.05176e-005, -1.52588e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1041,7 +1041,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate1" groups=[
 "door6",
 ]]
-position = Vector2( 3.05176e-05, -4.57764e-05 )
+position = Vector2( 3.05176e-005, -4.57764e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1061,7 +1061,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate2" groups=[
 "door6",
 ]]
-position = Vector2( 3.05176e-05, -1.52588e-05 )
+position = Vector2( 3.05176e-005, -1.52588e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1081,7 +1081,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate3" groups=[
 "door7",
 ]]
-position = Vector2( 3.05176e-05, -1.52588e-05 )
+position = Vector2( 3.05176e-005, -1.52588e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1101,7 +1101,7 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate4" groups=[
 "door7",
 ]]
-position = Vector2( 3.05176e-05, -4.57764e-05 )
+position = Vector2( 3.05176e-005, -4.57764e-005 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -1121,9 +1121,9 @@ autoplay = true
 [connection signal="body_entered" from="button6" to="." method="_button_ladder_on" binds= [ "2" ]]
 [connection signal="body_entered" from="button7" to="." method="_button_ladder_off" binds= [ "2" ]]
 [connection signal="body_entered" from="button7" to="." method="_button_ladder_on" binds= [ "1" ]]
-[connection signal="body_entered" from="button8" to="." method="_button_ladder_on" binds= [ "3" ]]
 [connection signal="body_entered" from="button8" to="." method="_button_door_on" binds= [ "7" ]]
 [connection signal="body_entered" from="button8" to="." method="_button_door_off" binds= [ "6" ]]
+[connection signal="body_entered" from="button8" to="." method="_button_ladder_on" binds= [ "3" ]]
 [connection signal="body_entered" from="button9" to="." method="_button_door_on" binds= [ "6" ]]
 [connection signal="body_entered" from="button9" to="." method="_button_door_off" binds= [ "7" ]]
 [connection signal="body_entered" from="button10" to="." method="_button_ladder_off" binds= [ "3" ]]

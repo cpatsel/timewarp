@@ -106,8 +106,8 @@ limit_smoothed = true
 editor_draw_limits = true
 
 [node name="ghost" parent="." groups=[
-"ghost",
 "player",
+"ghost",
 ] instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( -84.94, 414.436 )
@@ -1182,21 +1182,21 @@ texture = ExtResource( 12 )
 [connection signal="body_entered" from="button1" to="." method="_button_ladder_on" binds= [ "1" ]]
 [connection signal="body_entered" from="button2" to="." method="_button_door_off" binds= [ "1" ]]
 [connection signal="body_entered" from="button3" to="." method="_button_door_off" binds= [ "2" ]]
-[connection signal="body_entered" from="button4" to="." method="_button_door_off" binds= [ "4" ]]
 [connection signal="body_entered" from="button4" to="." method="_button_door_on" binds= [ "3" ]]
-[connection signal="body_entered" from="button5" to="." method="_button_door_off" binds= [ "3" ]]
+[connection signal="body_entered" from="button4" to="." method="_button_door_off" binds= [ "4" ]]
 [connection signal="body_entered" from="button5" to="." method="_button_door_on" binds= [ "4" ]]
+[connection signal="body_entered" from="button5" to="." method="_button_door_off" binds= [ "3" ]]
 [connection signal="body_entered" from="button6" to="." method="_button_door_off" binds= [ "5" ]]
 [connection signal="body_entered" from="button7" to="." method="_button_door_off" binds= [ "6" ]]
 [connection signal="body_entered" from="button8" to="." method="_button_door_on" binds= [ "7" ]]
-[connection signal="body_entered" from="button9" to="." method="_button_door_off" binds= [ "9" ]]
 [connection signal="body_entered" from="button9" to="." method="_button_door_on" binds= [ "8" ]]
-[connection signal="body_entered" from="button10" to="." method="_button_door_off" binds= [ "11" ]]
+[connection signal="body_entered" from="button9" to="." method="_button_door_off" binds= [ "9" ]]
 [connection signal="body_entered" from="button10" to="." method="_button_door_on" binds= [ "10" ]]
-[connection signal="body_entered" from="button11" to="." method="_button_door_off" binds= [ "10" ]]
+[connection signal="body_entered" from="button10" to="." method="_button_door_off" binds= [ "11" ]]
 [connection signal="body_entered" from="button11" to="." method="_button_door_on" binds= [ "11" ]]
-[connection signal="body_entered" from="button12" to="." method="_button_door_off" binds= [ "12" ]]
+[connection signal="body_entered" from="button11" to="." method="_button_door_off" binds= [ "10" ]]
 [connection signal="body_entered" from="button12" to="." method="_button_door_on" binds= [ "13" ]]
+[connection signal="body_entered" from="button12" to="." method="_button_door_off" binds= [ "12" ]]
 [connection signal="body_entered" from="exit" to="youwin" method="_on_exit_body_entered"]
 [connection signal="body_entered" from="checkpoint1" to="." method="_checkpoint_hit" binds= [ "1", 460, 0, 820, 240 ]]
 [connection signal="body_entered" from="checkpoint2" to="." method="_checkpoint_hit" binds= [ "2", 770, 0, 965, 450 ]]
